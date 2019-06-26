@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [
+const routes: Routes = [
 {
   path: '',
   redirectTo: 'users',
@@ -10,11 +10,11 @@ export const routes: Routes = [
 },
 {
   path: 'users',
-  loadChildren: '../modules/users-list/users-list.module#UsersListModule'
+  loadChildren: './system/users-list/users-list.module#UsersListModule'
 },
 {
   path: 'user',
-  loadChildren: '../modules/user/user.module#UserModule'
+  loadChildren: './system/user/user.module#UserModule'
 }
 ];
 

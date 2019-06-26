@@ -1,0 +1,23 @@
+<mat-card class="example-card" *ngIf="userLoaded">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      *ngIf="user?.avatar"
+      class="example-header-image" [ngStyle]="{background: 'url(\'' + user.avatar + '\') no-repeat center'}"></div>
+    <mat-card-title>{{user?.first_name}}</mat-card-title>
+    <mat-card-subtitle>{{user?.last_name}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      email: {{user?.email}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>EDIT</button>
+    <button mat-button>REMOVE</button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template *ngIf="!userLoaded">
+  <mat-spinner></mat-spinner>
+</ng-template>
